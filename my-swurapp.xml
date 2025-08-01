@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<Container version="1">
+  <Name>swurApp</Name>
+  <Repository>owlcaribou/swurapp:latest</Repository>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Project>https://github.com/OwlCaribou/swurApp</Project>
+  <Overview>swurApp is a simple Python program that unmonitors episodes in Sonarr until they have actually aired. This prevents downloading malicious or fake content that is often seeded to torrent sites before the episode has released.</Overview>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <Config Name="API_KEY" Target="API_KEY" Default="" Mode="" Description="The API key used to authenticate requests with the Sonarr instance. Get this under " Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="BASE_URL" Target="BASE_URL" Default="" Mode="" Description="The full base URL of your Sonarr server, including scheme (http/https), host, and port. For example: " Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="DELAY_IN_MINUTES" Target="DELAY_IN_MINUTES" Default="60" Mode="" Description="How often to monitor and unmonitor episodes" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="IGNORE_TAG_NAME" Target="IGNORE_TAG_NAME" Default="ignore" Mode="" Description="The tag name for series that should not be processed by swurApp" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+</Container>
+
